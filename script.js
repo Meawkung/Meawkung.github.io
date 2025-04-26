@@ -152,14 +152,26 @@ const ctx = canvas.getContext('2d');
 function renderPage(num) {
     pageRendering = true;
     pdfDoc.getPage(num).then(function(page) {
-        const viewport = page.getViewport({scale: scale});
+        // Get device pixel ratio
+        const pixelRatio = window.devicePixelRatio || 1;
+        
+        // Calculate viewport with device pixel ratio
+        const viewport = page.getViewport({scale: scale * pixelRatio});
+        
+        // Set canvas dimensions with device pixel ratio
         canvas.height = viewport.height;
         canvas.width = viewport.width;
-
+        
+        // Scale the canvas context to match the device pixel ratio
+        ctx.scale(pixelRatio, pixelRatio);
+        
         const renderContext = {
             canvasContext: ctx,
-            viewport: viewport
+            viewport: viewport,
+            enableWebGL: true,
+            renderInteractiveForms: true
         };
+        
         const renderTask = page.render(renderContext);
 
         renderTask.promise.then(function() {
@@ -211,6 +223,15 @@ function onZoomOut() {
 
 // Initialize PDF viewer when modal opens
 document.getElementById('resumeModal').addEventListener('show.bs.modal', function () {
+    // Reset scale to 1.0 when opening modal
+    scale = 1.0;
+    
+    // Set initial scale based on device width
+    const deviceWidth = window.innerWidth;
+    if (deviceWidth < 768) {
+        scale = 0.8; // Slightly smaller scale for mobile
+    }
+    
     pdfjsLib.getDocument('resume/UP23.pdf').promise.then(function(pdfDoc_) {
         pdfDoc = pdfDoc_;
         document.getElementById('page-count').textContent = pdfDoc.numPages;

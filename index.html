@@ -54,56 +54,32 @@
     <!-- Hero/About Section -->
     <header id="page-top" class="hero-section text-white text-center">
         <div id="particles-js"></div>
-        <div class="container d-flex align-items-center flex-column hero-content">
+        <div class="container d-flex align-items-center flex-column hero-content px-3">
             <h1 class="display-4 fw-bold mt-5" data-aos="fade-up">Natdanai Thamthong</h1>
-            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Aspiring System Engineer | Computer Engineering Student | CTF Winner</p>
+            <div class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="d-md-inline d-block">
+                    Aspiring System Engineer
+                    <span class="d-none d-md-inline text-primary mx-2">•</span>
+                    <hr class="d-md-none my-3" style="width: 80px; margin: 0.5rem auto; border: none; height: 2px; background: linear-gradient(90deg, transparent, #0d6efd, transparent);">
+                </div>
+                <div class="d-md-inline d-block">
+                    Computer Engineering Student
+                    <span class="d-none d-md-inline text-primary mx-2">•</span>
+                    <hr class="d-md-none my-3" style="width: 80px; margin: 0.5rem auto; border: none; height: 2px; background: linear-gradient(90deg, transparent, #0d6efd, transparent);">
+                </div>
+                <div class="d-md-inline d-block">
+                    CTF Winner
+                </div>
+            </div>
             <p class="mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up" data-aos-delay="200">
                 Highly motivated 3rd-year Computer Engineering student seeking a System Engineer Internship. Eager to apply hands-on experience in network analysis, system administration (Linux VPS), and extensive Microsoft training (AD, Hyper-V, M365) to real-world infrastructure challenges.
             </p>
             <div data-aos="fade-up" data-aos-delay="300">
                 <a href="#contact" class="btn btn-primary btn-lg me-2">Contact Me</a>
-                <a href="resume-viewer.html" class="btn btn-outline-light btn-lg" target="_blank">View Resume</a>
+                <a href="pdf/Resume_NatdanaiThamthong.pdf" class="btn btn-outline-light btn-lg" target="_blank">View Resume</a>
             </div>
         </div>
     </header>
-
-    <!-- Resume Modal -->
-    <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="resumeModalLabel">My Resume</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-0">
-                    <div id="pdf-viewer" class="pdf-container">
-                        <canvas id="pdf-render"></canvas>
-                        <div class="pdf-controls">
-                            <button id="prev-page" class="btn btn-sm btn-outline-primary">
-                                <i class="bi bi-chevron-left"></i> Previous
-                            </button>
-                            <span id="page-num"></span> / <span id="page-count"></span>
-                            <button id="next-page" class="btn btn-sm btn-outline-primary">
-                                Next <i class="bi bi-chevron-right"></i>
-                            </button>
-                            <button id="zoom-in" class="btn btn-sm btn-outline-secondary">
-                                <i class="bi bi-zoom-in"></i>
-                            </button>
-                            <button id="zoom-out" class="btn btn-sm btn-outline-secondary">
-                                <i class="bi bi-zoom-out"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="pdf/Resume_NatdanaiThamthong.pdf" class="btn btn-primary" download>
-                        <i class="bi bi-download me-2"></i>Download PDF
-                    </a>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- About Section -->
     <section id="about" class="py-5 bg-light">
@@ -278,7 +254,7 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-5">
                 <h2 class="text-center mb-0 section-title" data-aos="fade-up">Extracurricular Activities</h2>
-                <a href="extracurricular-viewer.html" class="btn btn-primary">
+                <a href="pdf/extracurricular.pdf" class="btn btn-primary" target="_blank">
                     <i class="bi bi-arrow-right me-2"></i>View More Activities
                 </a>
             </div>
@@ -305,6 +281,8 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="https://line.me/ti/p/nvjEYDDoBt" target="_blank">Open LINE Chat</a></li>
                             <li><a class="dropdown-item" href="#" onclick="copyLineId('natdaai2547'); return false;">Copy LINE ID</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><span class="dropdown-item-text">LINE ID: <strong>natdaai2547</strong></span></li>
                         </ul>
                     </div>
                     <a href="https://github.com/Meawkung" target="_blank" class="text-white fs-4">
@@ -336,13 +314,6 @@
 
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <!-- PDF.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script>
-        // Set worker path
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-    </script>
 
     <!-- Custom JS -->
     <script src="js/projects-data.js"></script>

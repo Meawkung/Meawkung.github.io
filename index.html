@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' https://cdn.jsdelivr.net https://unpkg.com 'unsafe-inline';
+      style-src 'self' https://cdn.jsdelivr.net https://unpkg.com 'unsafe-inline';
+      img-src 'self' data: https://cdn.jsdelivr.net;
+      font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com;
+      connect-src 'self';
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <title>Natdanai Thamthong - Aspiring System Engineer</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70">
+
+    <!-- Navigation Bar -->
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Natdanai Thamthong</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education & Training</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#extracurricular">Extracurricular</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero/About Section -->
+    <header id="page-top" class="hero-section text-white text-center">
+        <div id="particles-js"></div>
+        <div class="container d-flex align-items-center flex-column hero-content">
+            <h1 class="display-4 fw-bold mt-5" data-aos="fade-up">Natdanai Thamthong</h1>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Aspiring System Engineer | Computer Engineering Student | CTF Winner</p>
+            <p class="mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up" data-aos-delay="200">
+                Highly motivated 3rd-year Computer Engineering student seeking a System Engineer Internship. Eager to apply hands-on experience in network analysis, system administration (Linux VPS), and extensive Microsoft training (AD, Hyper-V, M365) to real-world infrastructure challenges.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <a href="#contact" class="btn btn-primary btn-lg me-2">Contact Me</a>
+                <a href="resume-viewer.html" class="btn btn-outline-light btn-lg" target="_blank">View Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Resume Modal -->
+    <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resumeModalLabel">My Resume</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div id="pdf-viewer" class="pdf-container">
+                        <canvas id="pdf-render"></canvas>
+                        <div class="pdf-controls">
+                            <button id="prev-page" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-chevron-left"></i> Previous
+                            </button>
+                            <span id="page-num"></span> / <span id="page-count"></span>
+                            <button id="next-page" class="btn btn-sm btn-outline-primary">
+                                Next <i class="bi bi-chevron-right"></i>
+                            </button>
+                            <button id="zoom-in" class="btn btn-sm btn-outline-secondary">
+                                <i class="bi bi-zoom-in"></i>
+                            </button>
+                            <button id="zoom-out" class="btn btn-sm btn-outline-secondary">
+                                <i class="bi bi-zoom-out"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="pdf/Resume_NatdanaiThamthong.pdf" class="btn btn-primary" download>
+                        <i class="bi bi-download me-2"></i>Download PDF
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 section-title" data-aos="fade-up">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0 text-center text-lg-start" data-aos="fade-right">
+                    <img src="images/profile.jpg" alt="Natdanai Thamthong" class="about-image">
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="about-text">
+                        <p class="lead">I'm passionate about building and maintaining robust IT infrastructure. My experience spans from winning network analysis challenges in CTFs to developing and managing applications on Linux servers. I thrive in collaborative environments and am always eager to learn new technologies in networking, systems, and cybersecurity.</p>
+                        <p>When I'm not working on technical projects, I enjoy playing games, watching anime, and live streaming. In my free time, particularly in the evenings, I also make time for exercise, such as running, and I'm currently interested in going to the gym for weightlifting. I believe in continuous learning and staying up-to-date with the latest technologies in the field.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title" data-aos="fade-up">Technical Skills</h2>
+            <div class="row text-center">
+                <!-- Operating Systems -->
+                <div class="col-md-4 mb-4">
+                    <div class="skills-card">
+                        <i class="bi bi-pc-display-horizontal skills-icon text-primary"></i>
+                        <h5 class="fw-bold">Operating Systems</h5>
+                        <p>Windows Server (Config/Troubleshoot), Windows 10/11, Linux (Ubuntu - VPS Mgmt), macOS (Familiarity)</p>
+                    </div>
+                </div>
+                <!-- Microsoft Tech -->
+                <div class="col-md-4 mb-4">
+                    <div class="skills-card">
+                        <i class="bi bi-microsoft skills-icon text-success"></i>
+                        <h5 class="fw-bold">Microsoft Technologies</h5>
+                        <p>Active Directory, Hyper-V, M365 Admin, DNS, DHCP, Server Roles & Features, Basic PowerShell</p>
+                    </div>
+                </div>
+                <!-- Networking -->
+                <div class="col-md-4 mb-4">
+                    <div class="skills-card">
+                        <i class="bi bi-diagram-3 skills-icon text-info"></i>
+                        <h5 class="fw-bold">Networking</h5>
+                        <p>TCP/IP (IPv4/v6), LAN/VLAN, DNS, DHCP, Wireshark, Log Analysis, Troubleshooting, Routing Concepts (CCNA In Progress)</p>
+                    </div>
+                </div>
+                <!-- Security -->
+                <div class="col-md-4 mb-4">
+                    <div class="skills-card">
+                        <i class="bi bi-shield-lock skills-icon text-danger"></i>
+                        <h5 class="fw-bold">Security</h5>
+                        <p>Cybersecurity Fundamentals, Network Security, Log Analysis, Forensics Concepts (Kali exposure), NIST/ISO27001 Awareness</p>
+                    </div>
+                </div>
+                <!-- Programming & Tools -->
+                <div class="col-md-4 mb-4">
+                    <div class="skills-card">
+                        <i class="bi bi-code-slash skills-icon text-warning"></i>
+                        <h5 class="fw-bold">Programming & Tools</h5>
+                        <p>Python (discord.py, gTTS, API), Git/GitHub, MS Office Suite, Wireshark, Basic Shell Scripting</p>
+                    </div>
+                </div>
+                <!-- Soft Skills -->
+                <div class="col-md-4 mb-4">
+                    <div class="skills-card">
+                        <i class="bi bi-people skills-icon text-secondary"></i>
+                        <h5 class="fw-bold">Soft Skills</h5>
+                        <p>Problem-Solving, Teamwork, Communication, Analytical Thinking, Eager Learner, Self-Motivated</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Projects Section -->
+    <section id="experience" class="py-5 bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h2 class="text-center mb-0">Experience & Projects</h2>
+                <a href="projects.html" class="btn btn-primary">
+                    <i class="bi bi-arrow-right me-2"></i>View All Projects
+                </a>
+            </div>
+            <div class="row">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Training Section -->
+    <section id="education" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title" data-aos="fade-up">Education & Training</h2>
+            <div class="row">
+                <!-- Education -->
+                <div class="col-md-6 mb-4">
+                    <h4 class="mb-3"><i class="bi bi-mortarboard-fill"></i> Education</h4>
+                    <div class="p-3 border rounded shadow-sm">
+                        <h5 class="fw-bold">Unievrsity of Phayao</h5>
+                        <p class="mb-1">Bachelor of Engineering in Computer Engineering</p>
+                        <p class="text-muted mb-2">Expected Graduation: March 2026</p>
+                        <p class="mb-1"><strong>Relevant Coursework:</strong></p>
+                        <ul class="list-unstyled mb-0 small">
+                            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Principles of Computer Networks</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Cyber Security</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Operating Systems</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Web Programming Technology</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Training -->
+                <div class="col-md-6 mb-4">
+                    <h4 class="mb-3"><i class="bi bi-clipboard-check-fill"></i> Key Training Completed</h4>
+                    <div class="p-3 border rounded shadow-sm">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-diagram-3 text-primary me-2"></i>TCP/IP Networking (Comprehensive)</li>
+                            <li class="mb-2"><i class="bi bi-hdd-stack text-info me-2"></i>Hyper-V Management</li>
+                            <li class="mb-2"><i class="bi bi-people-fill text-success me-2"></i>Active Directory Management</li>
+                            <li class="mb-2"><i class="bi bi-microsoft text-warning me-2"></i>Microsoft 365 Administration</li>
+                            <li class="mb-2"><i class="bi bi-shield-shaded text-danger me-2"></i>Cybersecurity & Digital Forensics (Kali Linux)</li>
+                            <li class="mb-2"><i class="bi bi-file-earmark-text text-secondary me-2"></i>Cybersecurity Frameworks (NIST, ISO27001)</li>
+                            <li class="mt-3"><strong><i class="bi bi-clock-history text-primary me-2"></i>In Progress:</strong> Cisco CCNA Certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <!-- <div class="row mt-5" id="certifications-section">
+                <div class="col-12 d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="mb-0"><i class="bi bi-award-fill"></i> Certifications</h4>
+                    <a href="certifications.html" class="btn btn-primary">
+                        <i class="bi bi-grid-3x3-gap me-2"></i>View All Certifications
+                    </a>
+                </div>
+                <div class="row" id="certifications-container"> -->
+                    <!-- Certifications will be dynamically inserted here by certifications-data.js -->
+                <!-- </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- All Certifications Modal -->
+    <!-- <div class="modal fade" id="allCertsModal" tabindex="-1" aria-labelledby="allCertsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="allCertsModalLabel">All Certifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4" id="all-certifications-container"> -->
+                        <!-- Certifications will be dynamically inserted here by certifications-data.js -->
+                    <!-- </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Certification Modals Container -->
+    <div id="certification-modals-container">
+        <!-- Certification modals will be dynamically inserted here by certifications-data.js -->
+    </div>
+
+    <!-- Extracurricular Activities Section -->
+    <section id="extracurricular" class="py-5 bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h2 class="text-center mb-0 section-title" data-aos="fade-up">Extracurricular Activities</h2>
+                <a href="extracurricular-viewer.html" class="btn btn-primary">
+                    <i class="bi bi-arrow-right me-2"></i>View More Activities
+                </a>
+            </div>
+            <div class="row" id="extracurricular-container">
+                <!-- Activities will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Get In Touch</h2>
+            <p class="lead mb-4">Interested in discussing opportunities or just want to connect? Feel free to reach out!</p>
+            <div class="mb-4 d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+                <a href="mailto:natdanai.workmail@gmail.com" class="text-white fs-4 text-break">
+                    <i class="bi bi-envelope-fill"></i> natdanai.workmail@gmail.com
+                </a>
+                <div class="d-flex gap-3">
+                    <div class="dropdown">
+                        <a href="#" class="text-white fs-4 dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-line"></i> LINE
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://line.me/ti/p/nvjEYDDoBt" target="_blank">Open LINE Chat</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="copyLineId('natdaai2547'); return false;">Copy LINE ID</a></li>
+                        </ul>
+                    </div>
+                    <a href="https://github.com/Meawkung" target="_blank" class="text-white fs-4">
+                        <i class="bi bi-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+            <a href="pdf/Resume_NatdanaiThamthong.pdf" class="btn btn-primary btn-lg" download>
+                <i class="bi bi-download me-2"></i>Download My Resume
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-black text-white-50">
+        <div class="container text-center">
+            <small>Copyright © Natdanai Thamthong 2025</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        // Set worker path
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+
+    <!-- Custom JS -->
+    <script src="js/projects-data.js"></script>
+    <script src="js/certifications-data.js"></script>
+    <script src="js/extracurricular-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function copyLineId(lineId) {
+            navigator.clipboard.writeText(lineId).then(() => {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'LINE ID "natdaai2547" copied to clipboard!',
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+            }).catch(err => {
+                console.error('Failed to copy LINE ID: ', err);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to copy LINE ID',
+                    icon: 'error',
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>

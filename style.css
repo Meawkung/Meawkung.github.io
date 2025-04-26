@@ -1,0 +1,532 @@
+/* Optional: Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Main Content */
+.main-content {
+    padding-top: 56px; /* Height of navbar */
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -70px; /* Offset the navbar height */
+    padding-top: 70px; /* Add padding to account for navbar */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.hero-section .btn {
+    margin: 0.5rem;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* About Section */
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+}
+
+.about-image:hover {
+    transform: scale(1.02);
+}
+
+.about-text {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.about-text::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 20px;
+    border-style: solid;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 991.98px) {
+    .about-image {
+        max-width: 300px;
+        margin-bottom: 2rem;
+    }
+    
+    .about-text::before {
+        display: none;
+    }
+}
+
+/* Section Padding */
+section {
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+    transform: translateX(-50%);
+}
+
+/* Card Styling Improvements */
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Skill Icon Size */
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+/* Ensure footer is dark */
+footer.bg-black {
+    background-color: #000 !important;
+}
+
+/* Adjust link colors if needed */
+#contact a {
+    transition: color 0.2s ease;
+}
+
+#contact a:hover {
+    color: #adb5bd !important; /* Slightly lighter grey on hover */
+}
+
+/* Navigation */
+.navbar {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background-color: rgba(33, 37, 41, 0.9) !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
+
+/* Responsive Adjustments (Example) */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    body {
+        padding-top: 56px; /* Adjust padding for smaller navbar height */
+    }
+    .cursor, .cursor-follower {
+        display: none;
+    }
+    
+    * {
+        cursor: auto;
+    }
+}
+
+/* Resume Modal Styling */
+.modal-xl {
+    max-width: 90%;
+}
+
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-body {
+    background-color: #fff;
+}
+
+.modal-body iframe {
+    border: none;
+    width: 100%;
+    height: 80vh;
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+/* PDF Viewer Styling */
+.pdf-container {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 56px);
+    overflow: auto;
+    background-color: #f8f9fa;
+}
+
+#pdf-render {
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.pdf-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid #dee2e6;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.pdf-controls button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.pdf-controls button:hover {
+    transform: translateY(-2px);
+}
+
+.pdf-controls span {
+    margin: 0 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Skills Section */
+.skills-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.skills-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.skills-card:hover .skills-icon {
+    transform: scale(1.1);
+}
+
+.skills-card h5 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.skills-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Projects Page Styling */
+.projects-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 100px 0;
+    margin-top: 56px;
+}
+
+.project-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.project-content h3 {
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.project-content .lead {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.project-content ul li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.project-content .badge {
+    font-size: 0.85rem;
+    padding: 0.5em 0.8em;
+}
+
+.img-fluid.rounded.shadow {
+    transition: transform 0.3s ease;
+}
+
+.img-fluid.rounded.shadow:hover {
+    transform: scale(1.02);
+}
+
+/* Certification Cards */
+.certification-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.certification-image {
+    position: relative;
+    overflow: hidden;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+}
+
+.certification-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover .certification-image img {
+    transform: scale(1.05);
+}
+
+.certification-content {
+    padding: 20px;
+}
+
+.certification-content h5 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-content p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.certification-content .small {
+    color: #888;
+}
+
+/* Certification Modals */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    border-radius: 0 0 15px 15px;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-body img {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.modal-body img:hover {
+    transform: scale(1.02);
+}
+
+.modal-body h6 {
+    color: #666;
+    font-weight: 600;
+}
+
+.modal-body ul li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.modal-body ul li i {
+    color: #28a745;
+}

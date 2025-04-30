@@ -12,7 +12,7 @@
       connect-src 'self';
     ">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <title>Natdanai Thamthong - Aspiring System Engineer</title>
 
@@ -350,28 +350,17 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- LINE Card -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="contact-card p-4 rounded-3 bg-gradient h-100">
                         <div class="contact-icon mb-3">
                             <i class="bi bi-line fs-1 text-success"></i>
                         </div>
                         <h5 class="mb-3">LINE</h5>
-                        <div class="dropdown">
-                            <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Connect on LINE
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="https://line.me/ti/p/nvjEYDDoBt" target="_blank">Open LINE Chat</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="copyLineId('natdaai2547'); return false;">Copy LINE ID</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><span class="dropdown-item-text">LINE ID: <strong>natdaai2547</strong></span></li>
-                            </ul>
-                        </div>
+                        <button class="btn btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#lineModal">
+                            Connect on LINE
+                        </button>
                     </div>
                 </div>
-
                 <!-- GitHub Card -->
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
                     <div class="contact-card p-4 rounded-3 bg-gradient h-100">
@@ -384,15 +373,47 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- LINE Card -->
+                
             </div>
 
-            <div class="mt-5" data-aos="fade-up" data-aos-delay="500">
+            <div class="mt-5 pt-5" data-aos="fade-up" data-aos-delay="500">
                 <a href="pdf/Resume_NatdanaiThamthong.pdf" class="btn btn-primary btn-lg" download>
                     <i class="bi bi-download me-2"></i>Download My Resume
                 </a>
             </div>
         </div>
     </section>
+
+    <!-- LINE Modal -->
+    <div class="modal fade" id="lineModal" tabindex="-1" aria-labelledby="lineModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lineModalLabel">Connect on LINE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex flex-column align-items-center">
+                        <i class="bi bi-line fs-1 text-success mb-3"></i>
+                        <p class="mb-3">You can connect with me on LINE using:</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">LINE ID:</span>
+                            <input type="text" class="form-control" value="natdaai2547" id="lineIdInput" readonly>
+                            <button class="btn btn-outline-primary" type="button" onclick="copyLineId('natdaai2547')">
+                                <i class="bi bi-clipboard"></i> Copy
+                            </button>
+                        </div>
+                        <p class="mb-3"></p>or</p>
+                        <a href="https://line.me/ti/p/nvjEYDDoBt" target="_blank" class="btn btn-success">
+                            <i class="bi bi-line me-2"></i>Open LINE Chat
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="py-4 bg-black text-white-50">
@@ -423,7 +444,7 @@
             navigator.clipboard.writeText(lineId).then(() => {
                 Swal.fire({
                     title: 'Success!',
-                    text: 'LINE ID "natdaai2547" copied to clipboard!',
+                    text: 'LINE ID copied to clipboard!',
                     icon: 'success',
                     timer: 2000,
                     showConfirmButton: false

@@ -2,7 +2,7 @@
 const projectsData = [
     {
         id: 'ctf',
-        title: '1st Place - Capture The Flag',
+        title: '1st Place - Capture The Flag "PSRU Cyber Hackathon 2023 โครงการอบรมเชิงปฏิบัติการและแข่งขันทักษะทางไซเบอร์ ครั้งที่ 1"',
         icon: 'bi-trophy-fill',
         iconColor: 'text-warning',
         images: [

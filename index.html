@@ -86,13 +86,14 @@
         <div class="container">
             <h2 class="text-center mb-4 section-title" data-aos="fade-up">About Me</h2>
             <div class="row align-items-center">
-                <div class="col-lg-4 mb-4 mb-lg-0 text-center text-lg-start" data-aos="fade-right">
-                    <img src="images/profile.jpg" alt="Natdanai Thamthong" class="about-image">
+                <div class="col-lg-4 mb-4 mb-lg-0 text-center" data-aos="fade-right">
+                    <div class="d-flex justify-content-center">
+                        <img src="images/profile.jpg" alt="Natdanai Thamthong" class="about-image" style="max-width: 250px; height: auto;">
+                    </div>
                 </div>
                 <div class="col-lg-8" data-aos="fade-left">
                     <div class="about-text">
                         <p class="lead">I'm passionate about building and maintaining robust IT infrastructure. My experience spans from winning network analysis challenges in CTFs to developing and managing applications on Linux servers. I thrive in collaborative environments and am always eager to learn new technologies in networking, systems, and cybersecurity.</p>
-                        <p>When I'm not working on technical projects, I enjoy playing games, watching anime, and live streaming. In my free time, particularly in the evenings, I also make time for exercise, such as running, and I'm currently interested in going to the gym for weightlifting. I believe in continuous learning and staying up-to-date with the latest technologies in the field.</p>
                     </div>
                 </div>
             </div>
@@ -109,7 +110,7 @@
                     <div class="skills-card">
                         <i class="bi bi-pc-display-horizontal skills-icon text-primary"></i>
                         <h5 class="fw-bold">Operating Systems</h5>
-                        <p>Windows Server (Config/Troubleshoot), Windows 10/11, Linux (Ubuntu - VPS Mgmt), macOS (Familiarity)</p>
+                        <p>Windows Server (Config/Troubleshoot), Windows 10/11, Linux (Ubuntu - VPS Mgmt)</p>
                     </div>
                 </div>
                 <!-- Microsoft Tech -->
@@ -180,16 +181,25 @@
                 <div class="col-md-6 mb-4">
                     <h4 class="mb-3"><i class="bi bi-mortarboard-fill"></i> Education</h4>
                     <div class="p-3 border rounded shadow-sm">
-                        <h5 class="fw-bold">University of Phayao</h5>
-                        <p class="mb-1">Bachelor of Engineering in Computer Engineering</p>
-                        <p class="text-muted mb-2">Expected Graduation: March 2026</p>
-                        <p class="mb-1"><strong>Relevant Coursework:</strong></p>
-                        <ul class="list-unstyled mb-0 small">
-                            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Principles of Computer Networks</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Cyber Security</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Operating Systems</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-1"></i> Web Programming Technology</li>
-                        </ul>
+                        <div class="row">
+                            <div class="col-3 text-center">
+                                <img src="images/up-logo.png" alt="University of Phayao Logo" class="img-fluid" style="max-height: 80px;">
+                            </div>
+                            <div class="col-9">
+                                <h5 class="fw-bold">University of Phayao</h5>
+                                <p class="mb-1">Bachelor of Engineering in Computer Engineering</p>
+                                <p class="text-muted mb-2">Expected Graduation: March 2026</p>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <p class="mb-1"><strong>Relevant Coursework:</strong></p>
+                            <ul class="list-unstyled mb-0 small">
+                                <li><i class="bi bi-check-circle-fill text-success me-1"></i> Principles of Computer Networks</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-1"></i> Cyber Security</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-1"></i> Operating Systems</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-1"></i> Web Programming Technology</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- Training -->
@@ -199,11 +209,12 @@
                         <ul class="list-unstyled mb-0">
                             <li class="mb-2"><i class="bi bi-diagram-3 text-primary me-2"></i>TCP/IP Networking (Comprehensive)</li>
                             <li class="mb-2"><i class="bi bi-hdd-stack text-info me-2"></i>Hyper-V Management</li>
-                            <li class="mb-2"><i class="bi bi-people-fill text-success me-2"></i>Active Directory Management</li>
-                            <li class="mb-2"><i class="bi bi-microsoft text-warning me-2"></i>Microsoft 365 Administration</li>
                             <li class="mb-2"><i class="bi bi-shield-shaded text-danger me-2"></i>Cybersecurity & Digital Forensics (Kali Linux)</li>
                             <li class="mb-2"><i class="bi bi-file-earmark-text text-secondary me-2"></i>Cybersecurity Frameworks (NIST, ISO27001)</li>
-                            <li class="mt-3"><strong><i class="bi bi-clock-history text-primary me-2"></i>In Progress:</strong> Cisco CCNA Certification</li>
+                            <li class="mt-3"><strong><i class="bi bi-clock-history text-primary me-2"></i>In Progress:</strong></li>
+                            <li class="mb-2"><i class="bi bi-people-fill text-success me-2"></i>Active Directory Management</li>
+                            <li class="mb-2"><i class="bi bi-microsoft text-warning me-2"></i>Microsoft 365 Administration</li>
+                            <li class="mb-2"><i class="bi bi-diagram-3 text-primary me-2"></i>Cisco CCNA Certification</li>
                         </ul>
                     </div>
                 </div>
@@ -264,35 +275,122 @@
         </div>
     </section>
 
+    <!-- Personal Interests Section -->
+    <section id="interests" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title" data-aos="fade-up">Personal Interests</h2>
+            <div class="row justify-content-center g-4">
+                <!-- Gaming & Entertainment Card -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="bi bi-controller"></i>
+                        </div>
+                        <h4>Gaming & Entertainment</h4>
+                        <p>When I'm not working on technical projects, I enjoy playing games, watching anime, and live streaming. It's my way of unwinding and staying connected with the gaming community.</p>
+                        <div class="interest-tags">
+                            <span class="interest-tag">Gaming</span>
+                            <span class="interest-tag">Anime</span>
+                            <span class="interest-tag">Streaming</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fitness & Health Card -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h4>Fitness & Health</h4>
+                        <p>I maintain an active lifestyle through regular exercise. Currently focusing on running and weightlifting to stay fit and energized for my technical pursuits.</p>
+                        <div class="interest-tags">
+                            <span class="interest-tag">Running</span>
+                            <span class="interest-tag">Weightlifting</span>
+                            <span class="interest-tag">Fitness</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continuous Learning Card -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h4>Continuous Learning</h4>
+                        <p>I'm passionate about staying current with technology trends and expanding my knowledge in networking, systems, and cybersecurity.</p>
+                        <div class="interest-tags">
+                            <span class="interest-tag">Technology</span>
+                            <span class="interest-tag">Learning</span>
+                            <span class="interest-tag">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-5 bg-dark text-white">
         <div class="container text-center">
-            <h2 class="mb-4">Get In Touch</h2>
-            <p class="lead mb-4">Interested in discussing opportunities or just want to connect? Feel free to reach out!</p>
-            <div class="mb-4 d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-                <a href="mailto:natdanai.workmail@gmail.com" class="text-white fs-4 text-break">
-                    <i class="bi bi-envelope-fill"></i> natdanai.workmail@gmail.com
-                </a>
-                <div class="d-flex gap-3">
-                    <div class="dropdown">
-                        <a href="#" class="text-white fs-4 dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-line"></i> LINE
+            <h2 class="mb-4" data-aos="fade-up">Get In Touch</h2>
+            <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">Interested in discussing opportunities or just want to connect? Feel free to reach out!</p>
+            
+            <div class="row justify-content-center g-4">
+                <!-- Email Card -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card p-4 rounded-3 bg-gradient h-100">
+                        <div class="contact-icon mb-3">
+                            <i class="bi bi-envelope-fill fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="mb-3">Email</h5>
+                        <a href="mailto:natdanai.workmail@gmail.com" class="text-white text-decoration-none hover-effect">
+                            natdanai.workmail@gmail.com
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://line.me/ti/p/nvjEYDDoBt" target="_blank">Open LINE Chat</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="copyLineId('natdaai2547'); return false;">Copy LINE ID</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><span class="dropdown-item-text">LINE ID: <strong>natdaai2547</strong></span></li>
-                        </ul>
                     </div>
-                    <a href="https://github.com/Meawkung" target="_blank" class="text-white fs-4">
-                        <i class="bi bi-github"></i> GitHub
-                    </a>
+                </div>
+
+                <!-- LINE Card -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-card p-4 rounded-3 bg-gradient h-100">
+                        <div class="contact-icon mb-3">
+                            <i class="bi bi-line fs-1 text-success"></i>
+                        </div>
+                        <h5 class="mb-3">LINE</h5>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Connect on LINE
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://line.me/ti/p/nvjEYDDoBt" target="_blank">Open LINE Chat</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="copyLineId('natdaai2547'); return false;">Copy LINE ID</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><span class="dropdown-item-text">LINE ID: <strong>natdaai2547</strong></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub Card -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-card p-4 rounded-3 bg-gradient h-100">
+                        <div class="contact-icon mb-3">
+                            <i class="bi bi-github fs-1 text-light"></i>
+                        </div>
+                        <h5 class="mb-3">GitHub</h5>
+                        <a href="https://github.com/Meawkung" target="_blank" class="btn btn-outline-light">
+                            View My Projects
+                        </a>
+                    </div>
                 </div>
             </div>
-            <a href="pdf/Resume_NatdanaiThamthong.pdf" class="btn btn-primary btn-lg" download>
-                <i class="bi bi-download me-2"></i>Download My Resume
-            </a>
+
+            <div class="mt-5" data-aos="fade-up" data-aos-delay="500">
+                <a href="pdf/Resume_NatdanaiThamthong.pdf" class="btn btn-primary btn-lg" download>
+                    <i class="bi bi-download me-2"></i>Download My Resume
+                </a>
+            </div>
         </div>
     </section>
 

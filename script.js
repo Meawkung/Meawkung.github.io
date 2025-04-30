@@ -175,4 +175,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load extracurricular activities
     loadExtracurricularActivities();
+
+    const viewButtons = document.querySelectorAll('.pdf-view-trigger');
+
+    if (!viewButtons || viewButtons.length === 0) {
+        console.warn("No elements found with the class 'pdf-view-trigger'.");
+        return;
+    }
+
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Get the relative path from href (e.g., "pdf/Resume_NatdanaiThamthong.pdf")
+            const relativePdfPath = event.currentTarget.getAttribute('href');
+
+            if (!relativePdfPath) {
+                console.error("Button href attribute is missing or empty.", event.currentTarget);
+                alert("Could not find the PDF file path for this button.");
+                return;
+            }
+
+            // Construct the absolute path FROM THE SERVER ROOT.
+            // We assume index.html is served from the root, so the href
+            // path is relative to the root. Prepending '/' makes it absolute.
+            // If your index.html is in a subfolder, you might need more complex logic,
+            // but for standard Live Server setup, this works.
+            const absolutePdfPath = '/' + relativePdfPath;
+
+            // URL-encode the *absolute* path for the query parameter
+            const encodedPdfPath = encodeURIComponent(absolutePdfPath);
+
+            // Construct the URL for the viewer, pointing to viewer.html
+            // and passing the encoded absolute path of the PDF
+            // NOTE: The path to viewer.html itself is still relative to index.html
+            const viewerUrl = `pdfjs/web/viewer.html?file=${encodedPdfPath}`;
+
+            console.log(`Opening PDF viewer for ${absolutePdfPath} in new window with URL: ${viewerUrl}`);
+
+            // Open the viewer URL in a new window/tab
+            window.open(viewerUrl, '_blank');
+        });
+    });
 });
